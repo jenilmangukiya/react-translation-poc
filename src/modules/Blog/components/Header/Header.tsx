@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState } from "react";
 import Toolbar from "@mui/material/Toolbar";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
@@ -7,11 +7,11 @@ import Typography from "@mui/material/Typography";
 import Link from "@mui/material/Link";
 import {
   FormControl,
-  InputLabel,
   MenuItem,
   Select,
   SelectChangeEvent,
 } from "@mui/material";
+import { useTranslation } from "react-i18next";
 
 interface HeaderProps {
   sections: ReadonlyArray<{
@@ -23,10 +23,12 @@ interface HeaderProps {
 
 export default function Header(props: HeaderProps) {
   const { sections, title } = props;
-  const [language, setLanguage] = React.useState("");
+  const [language, setLanguage] = useState("english");
+  const { i18n } = useTranslation();
 
   const handleChange = (event: SelectChangeEvent) => {
     setLanguage(event.target.value);
+    i18n.changeLanguage(event.target.value);
   };
 
   return (
@@ -47,18 +49,18 @@ export default function Header(props: HeaderProps) {
           <SearchIcon />
         </IconButton>
         <FormControl size="small" sx={{ width: "150px" }}>
-          <InputLabel id="languageInput">Language</InputLabel>
           <Select
             labelId="languageInput"
             id="languageInput"
             value={language}
-            label="Language"
             onChange={handleChange}
             size="small"
           >
-            <MenuItem value={"English"}>English</MenuItem>
-            <MenuItem value={"French"}>French</MenuItem>
-            <MenuItem value={"Hindi"}>Hindi</MenuItem>
+            <MenuItem value={"english"} selected>
+              English
+            </MenuItem>
+            <MenuItem value={"french"}>French</MenuItem>
+            <MenuItem value={"hindi"}>Hindi</MenuItem>
           </Select>
         </FormControl>
       </Toolbar>

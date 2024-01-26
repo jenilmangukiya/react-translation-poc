@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { FeaturedPost, Footer, Header, MainFeaturedPost } from "./components";
 import {
   Container,
@@ -7,55 +8,55 @@ import {
   createTheme,
 } from "@mui/material";
 
-const sections = [
-  { title: "Technology", url: "#" },
-  { title: "Design", url: "#" },
-  { title: "Culture", url: "#" },
-  { title: "Business", url: "#" },
-  { title: "Politics", url: "#" },
-  { title: "Opinion", url: "#" },
-  { title: "Science", url: "#" },
-  { title: "Health", url: "#" },
-  { title: "Style", url: "#" },
-  { title: "Travel", url: "#" },
-];
-
-const mainFeaturedPost = {
-  title: "Title of a longer featured blog post",
-  description:
-    "Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.",
-  image: "https://source.unsplash.com/random?wallpapers",
-  imageText: "main image description",
-  linkText: "Continue reading…",
-};
-
-const featuredPosts = [
-  {
-    title: "Featured post",
-    date: "Nov 12",
-    description:
-      "This is a wider card with supporting text below as a natural lead-in to additional content.",
-    image: "https://source.unsplash.com/random?wallpapers",
-    imageLabel: "Image Text",
-  },
-  {
-    title: "Post title",
-    date: "Nov 11",
-    description:
-      "This is a wider card with supporting text below as a natural lead-in to additional content.",
-    image: "https://source.unsplash.com/random?wallpapers",
-    imageLabel: "Image Text",
-  },
-];
-
 const Blog = () => {
   const defaultTheme = createTheme();
+  const { t } = useTranslation();
+
+  const sections = [
+    { title: t("menuitem.technology"), url: "#" },
+    { title: t("menuitem.design"), url: "#" },
+    { title: t("menuitem.culture"), url: "#" },
+    { title: t("menuitem.business"), url: "#" },
+    { title: t("menuitem.politics"), url: "#" },
+    { title: t("menuitem.opinion"), url: "#" },
+    { title: t("menuitem.science"), url: "#" },
+    { title: t("menuitem.health"), url: "#" },
+    { title: t("menuitem.style"), url: "#" },
+    { title: t("menuitem.travel"), url: "#" },
+  ];
+
+  const mainFeaturedPost = {
+    title: t("main_featured_post.title"),
+    description: t("main_featured_post.description"),
+    image: "https://source.unsplash.com/random?wallpapers",
+    imageText: t("main_featured_post.imageText"),
+    linkText: t("main_featured_post.linkText"),
+  };
+
+  // Note: Most of the time this things are coming from backend so we can not do translation using this method at that time
+  const featuredPosts = [
+    {
+      title: t("featured_post.post1.title"),
+      date: "Nov 12",
+      description: t("featured_post.post1.description"),
+      image: "https://source.unsplash.com/random?wallpapers",
+      imageLabel: t("featured_post.post1.imageLabel"),
+    },
+    {
+      title: t("featured_post.post2.title"),
+      date: "Nov 11",
+      description: t("featured_post.post2.description"),
+      image: "https://source.unsplash.com/random?wallpapers",
+      imageLabel: t("featured_post.post2.imageLabel"),
+    },
+  ];
+
   return (
     <>
       <ThemeProvider theme={defaultTheme}>
         <CssBaseline />
         <Container maxWidth="lg">
-          <Header title="React Translation POC" sections={sections} />
+          <Header title="ReactJs Translation POC" sections={sections} />
           <main>
             <MainFeaturedPost post={mainFeaturedPost} />
             <Grid container spacing={4}>

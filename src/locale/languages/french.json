@@ -1,0 +1,32 @@
+{
+  "menuitem": {
+    "technology": "Technologie",
+    "design": "Design",
+    "culture": "Culture",
+    "business": "Affaires",
+    "politics": "Politique",
+    "opinion": "Opinion",
+    "science": "Science",
+    "health": "Santé",
+    "style": "Style",
+    "travel": "Voyage"
+  },
+  "main_featured_post": {
+    "title": "Titre d'un article de blog plus long",
+    "description": "Plusieurs lignes de texte qui forment le chapeau, informant rapidement et efficacement les nouveaux lecteurs sur ce qui est le plus intéressant dans le contenu de cet article.",
+    "imageText": "description de l'image principale",
+    "linkText": "Continuer la lecture…"
+  },
+  "featured_post": {
+    "post1": {
+      "title": "Article en vedette",
+      "description": "Il s'agit d'une carte plus large avec un texte de soutien ci-dessous comme introduction naturelle à du contenu supplémentaire.",
+      "imageText": "Texte de l'image"
+    },
+    "post2": {
+      "title": "Titre de l'article",
+      "description": "Il s'agit d'une carte plus large avec un texte de soutien ci-dessous comme introduction naturelle à du contenu supplémentaire.",
+      "imageText": "Texte de l'image"
+    }
+  }
+}

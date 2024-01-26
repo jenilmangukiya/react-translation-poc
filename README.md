@@ -1,4 +1,4 @@
-## Quick Start: i18n POC with React-i18n
+## i18n POC with React-i18n
 
 This project explores internationalizing our React app using react-i18n!
 
@@ -22,8 +22,11 @@ Scope:
 - Build basic language switching.
 - Evaluate ease of integration and effectiveness.
 
-Deliverables:
+## Results:
 
-- Functional React app with react-i18n.
-- Translated resource files.
-- Setup/usage documentation.
+English :-
+![alt text](./src/results/english.png)
+French :-
+![alt text](./src/results/french.png)
+Hindi :-
+![alt text](./src/results/hindi.png)
