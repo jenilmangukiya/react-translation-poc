@@ -1,7 +1,8 @@
 import "./App.css";
+import { Blog } from "./modules";
 
 function App() {
-  return <>Translation</>;
+  return <Blog />;
 }
 
 export default App;
